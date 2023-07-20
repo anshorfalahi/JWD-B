@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Menjalankan query
     if (mysqli_query($conn, $sql)) {
         // echo "Data berhasil disimpan ke dalam tabel.";
-        header("Location: index.php?status=sukses");
+        header("Location: pendaftaran.php?status=sukses_tambah");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

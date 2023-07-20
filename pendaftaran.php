@@ -11,6 +11,33 @@
   <body>
   <div class="container" style="background-color: cyan; padding: 20px; border-radius: 10px; margin-top: 13rem;"> 
     <h2>Siswa Yang Mendaftar</h2>
+    <?php
+      echo "Total Data: " . mysqli_num_rows($result) . "<br>";
+      if (isset($_GET['status'])) {
+        if ($_GET['status'] == 'sukses_edit'){
+          echo 
+          "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+            Data berhasil diubah
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>";
+        }elseif ($_GET['status'] == 'sukses_hapus') {
+          echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+            Data berhasil dihapus
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>";
+        }elseif($_GET['status'] == 'sukses_tambah') {
+          echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+            Data berhasil ditambahkan
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>";
+        }else {
+          echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+            Data gagal
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>";
+        }
+      }
+    ?>
     <a href="form-daftar.php" class="btn btn-primary mb-2">[+] Tambah Data</a>
     <a href="index.php" class="btn btn-success mb-2">Kembali</a>
     <table class="table table-striped">
@@ -45,16 +72,6 @@
         }
       ?>
     </table>
-    <?php
-      echo "Total Data: " . mysqli_num_rows($result) . "<br>";
-      if (isset($_GET['status'])) {
-        if ($_GET['status'] == 'sukses_edit'){
-          echo "Data berhasil diubah";
-        }else{
-          echo "Data gagal diubah";
-        }
-      }
-    ?>
   </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   </body>

@@ -33,19 +33,19 @@
 
       <label for="jenis_kelamin">Jenis Kelamin: </label>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="laki-laki" required> Laki-laki
+        <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="laki-laki" required <?php if ($row['jenis_kelamin'] == "laki-laki") echo "checked"?> > Laki-laki
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="perempuan" required> Perempuan
+        <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="perempuan" required <?php if ($row['jenis_kelamin'] == "perempuan") echo "checked"?> > Perempuan
       </div>
       <br>
       <label for="agama">Agama: </label>
       <select class="form-select" name="agama" id="agama" required>
-        <option value="Islam">Islam</option>
-        <option value="Kristen">Kristen</option>
-        <option value="Katolik">Katolik</option>
-        <option value="Hindu">Hindu</option>
-        <option value="Budha">Budha</option>
+        <option value="Islam" <?php if ($row['agama'] == "Islam") echo "selected"?> >Islam</option>
+        <option value="Kristen" <?php if ($row['agama'] == "Kristen") echo "selected"?> >Kristen</option>
+        <option value="Katolik" <?php if ($row['agama'] == "Katolik") echo "selected"?> >Katolik</option>
+        <option value="Hindu" <?php if ($row['agama'] == "Hindu") echo "selected"?> >Hindu</option>
+        <option value="Budha" <?php if ($row['agama'] == "Budha") echo "selected"?> >Budha</option>
       </select>
       <br>
       <label class="form-label"  for="sekolah_asal">Sekolah Asal: </label>

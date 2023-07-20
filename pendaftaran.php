@@ -40,7 +40,7 @@
     ?>
     <a href="form-daftar.php" class="btn btn-primary mb-2">[+] Tambah Data</a>
     <a href="index.php" class="btn btn-success mb-2">Kembali</a>
-    <table class="table table-striped">
+    <table  class="table table-striped table-bordered table-hover" style="text-align: center">
       <tr>
         <th>ID</th>
         <th>Nama</th>
@@ -64,7 +64,7 @@
               <td><?php echo $row['sekolah_asal']; ?></td>
               <td>
                 <a href="form-edit.php?id=<?php echo $row['id']; ?>" class="btn btn-warning">Edit</a>
-                <a href="hapus.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Hapus</a>
+                <a href="hapus.php?id=<?php echo $row['id'];?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" class="btn btn-danger">Hapus</a>
             </tr>
             <?php
             $i++;
